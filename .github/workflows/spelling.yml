@@ -1,0 +1,23 @@
+name: Check Spelling
+
+on:
+  pull_request_target:
+    branches:
+      - "main"
+
+jobs:
+  spelling:
+    name: Report (PR)
+    runs-on: ubuntu-latest
+    needs: spelling
+    permissions:
+      pull-requests: write
+    if: (success() || failure()) && needs.spelling.outputs.followup && contains(github.event_name, 'pull_request')
+    steps:
+      - name: comment
+        uses: check-spelling/check-spelling@main
+        with:
+          checkout: true
+          spell_check_this: check-spelling/spell-check-this@prerelease
+          task: ${{ needs.spelling.outputs.followup }}
+          experimental_apply_changes_via_bot: 1
