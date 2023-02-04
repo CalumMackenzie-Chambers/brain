@@ -1,0 +1,27 @@
+{
+  "semi": true,
+  "tabWidth": 4,
+  "printWidth": 100,
+  "singleQuote": false,
+  "trailingComma": "all",
+  "jsxSingleQuote": false,
+  "bracketSpacing": true,
+  "overrides": [
+    {
+      "files": [
+        "*.yml",
+        "*.yaml",
+        "*.json",
+        "*.md",
+        ".prettierrc",
+        "*.html",
+        "*.astro",
+        "*.mdx",
+        "*.css"
+      ],
+      "options": {
+        "tabWidth": 2
+      }
+    }
+  ]
+}

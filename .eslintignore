@@ -1,0 +1,7 @@
+build
+.docusaurus
+node_modules
+.github
+.changeset
+/src/pages/lighthouse
+yarn.lock
