@@ -60,3 +60,6 @@ ignore$
 ^build/
 ^.docusaurus/
 ^node_modules/
+\.css$
+\.json$
+^static/

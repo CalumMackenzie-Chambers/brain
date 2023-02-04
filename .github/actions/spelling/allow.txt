@@ -2,14 +2,12 @@ github
 https
 ssh
 ubuntu
-Calum
 calum
 AMFA
 assetmanagement
 astro
 blog
 config
-Config
 docusaurus
 mackenzie-chambers
 mackenziechambers
@@ -22,3 +20,10 @@ stakeholders
 username
 website
 screenshots
+southampton
+conventionalcommits
+netlify
+dracula
+tagline
+websites
+cta
