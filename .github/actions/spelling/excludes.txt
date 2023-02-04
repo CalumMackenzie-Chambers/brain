@@ -4,6 +4,7 @@
 (?:^|/)3rdparty/
 (?:^|/)go\.sum$
 (?:^|/)package(?:-lock|)\.json$
+(?:^|/)yarn\.lock$
 (?:^|/)vendor/
 ignore$
 \.a$
@@ -56,3 +57,6 @@ ignore$
 \.zip$
 ^\.github/actions/spelling/
 ^\Q.github/workflows/spelling.yml\E$
+^build/
+^.docusaurus/
+^node_modules/
