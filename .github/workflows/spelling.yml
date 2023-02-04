@@ -19,12 +19,13 @@ jobs:
     if: "contains(github.event_name, 'pull_request') || github.event_name == 'push'"
     concurrency:
       group: spelling-${{ github.event.pull_request.number || github.ref }}
-      cancel-in-progress: true
+      cancel-in-progress: false
     steps:
       - name: check-spelling
         id: spelling
         uses: check-spelling/check-spelling@main
         with:
+          only_check_changed_files: true
           suppress_push_for_open_pull_request: 1
           checkout: true
           check_file_names: 1
