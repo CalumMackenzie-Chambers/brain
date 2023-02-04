@@ -23,7 +23,7 @@ The Conventional Commits specification is a lightweight convention on top of com
 - An easier to understand commit history.
 - Easier git bisect and revert when a bug is introduced.
 - Automatically generating CHANGELOGs.
-- Automatically determining a semantic version bump (based on the types of commits landed).
+- Automatically determining a [Semantic Version](/git/semantic-versioning) bump (based on the types of commits landed).
 - Communicating the nature of changes to teammates, the public, and other stakeholders.
 
 ## [Commit message format](#commit-message-format)
@@ -83,6 +83,28 @@ Just as in the **description**, use the imperative, present tense: "change" not 
 ### _[Footer](#footer)_
 
 The footer should contain any information about **Breaking Changes** and is also the place to reference GitHub issues that this commit **Closes**. The footer is optional and should be omitted if it is not required.
+
+## [How to enforce Conventional Commits](#how-to-enforce-conventional-commits)
+
+I use [Commitsar](https://github.com/marketplace/actions/commitsar-action) as a [GitHub Action](/git/github/actions) to enforce Conventional Commits. It is a simple GitHub Action that requires minimal configuration and can be used in any repository. I now use it in all my repositories. Here is my configuration:
+
+```yaml
+name: Commitsar
+on: [pull_request]
+
+jobs:
+  validate-commits:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v1
+      - name: Commitsar check
+        uses: docker://aevea/commitsar
+```
+
+The workflow runs on every pull request and checks that all commits in the pull request are valid. If a commit is not valid, the workflow will fail and the pull request will not be merged. You could also use this workflow on every push instead if you prefered.
+
+The workflow runs very quickly and is very easy to configure. I highly recommend it.
 
 ## [Examples](#examples)
 
