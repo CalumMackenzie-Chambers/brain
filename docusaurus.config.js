@@ -74,6 +74,15 @@ const config = {
                 theme: lightCodeTheme,
                 darkTheme: darkCodeTheme,
             },
+            footer: {
+                logo: {
+                    alt: "Brain Logo",
+                    src: "img/logo.svg",
+                    width: 160,
+                    height: 51,
+                },
+                copyright: `Copyright © ${new Date().getFullYear()} Calum Mackenzie-Chambers`,
+            },
         }),
 };
 
